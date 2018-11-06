@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="Zestawienie oraz podsumowanie moich umiejetnosci progrmowania i elektronicznych.">
-<meta name="keywords" content="portfolio,praca,elektronika,front end developer, www, strona internerowa, zegar nixie, hardware">
+<meta name="keywords" content="portfolio,praca,elektronika,front end developer, www, strona internerowa, zegar nixie, hardware, software">
 <meta name="author" content="Adrian Kurianowicz">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moje portfolio</title>
-</head>
-<body>
+
 <style>
   body {background-color: #FF7F00;}
   h1 {color:#8C1717 ;}
@@ -39,24 +38,88 @@
     text-align: center;
 
     }
+    .menubtn {
+        background-color: #3498DB;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
 
-</style>
+    .menubtn :hover, .menubtn:focus {
+        background-color: #2980B9;
+    }
+
+    .menu {
+        position: relative;
+        display: inline-block;
+    }
+
+    .menu-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .menu-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .menu a:hover {background-color: #ddd;}
+
+    .show {display: block;}
+    </style>
+  </head>
+  <body>
 
 <header>
         <h1 > Adrian<br>Kurianowicz  </h1>
 </header>
  <section>
 
-<div>
+<div class="menu">
+  <button onclick="myFunction()" class = "menubtn" Menu </button>
+    <div id ="myMenu" class="menu-content">
          <li> <a href= "about.html" >O mnie</a></li>
-         <li> <a href="skills">Umiejętności</a></li>
-         <li> <a href="technologies" >Technologie</a></li>
-         <li> <a href="projects" >Projekty</a></li>
-         <li> <a href="contact" >Kontakt</a></li>
+         <li> <a href="skills.html">Umiejętności</a></li>
+         <li> <a href="technologies.html" >Technologie</a></li>
+         <li> <a href="projects.html" >Projekty</a></li>
+         <li> <a href="contact.html" >Kontakt</a></li>
 </div>
+</div>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myMenu").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.menubtn')) {
+
+    var menus = document.getElementsByClassName("menu-content");
+    var i;
+    for (i = 0; i < menus.length; i++) {
+      var openMenu = menus[i];
+      if (openMenu.classList.contains('show')) {
+        openMenu.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 <article>
 
-         <img src="../img/logo.jpg" alt="logo" width = "150" height ="300">
+ <center><img src="../img/logo.jpg" alt="logo" width = "400" height ="500"></center>
 
 </article>
 </section>
